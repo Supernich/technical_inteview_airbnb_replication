@@ -1,0 +1,51 @@
+<div>
+  <%= form_with(model: house, local: true) do |form| %>
+    <% if house.errors.any? %>
+      <div class="error-explanation">
+        <div class="h4"><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</div>
+
+        <ul>
+          <% house.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="cell">
+      <%= form.label(:country, class: 'form-label') %>
+      <%= form.text_field(:country, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <%= form.label(:city, class: 'form-label') %>
+      <%= form.text_field(:city, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <%= form.label(:address, class: 'form-label') %>
+      <%= form.text_field(:address, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <%= form.label(:name, class: 'form-label') %>
+      <%= form.text_field(:name, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <%= form.label(:description, class: 'form-label') %>
+      <%= form.text_area(:description, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <div class="form-label">
+        Price per night in $
+      </div>
+      <%= form.text_field(:price, class: 'form-control') %>
+    </div>
+
+    <div class="cell">
+      <%= form.submit(class: 'btn btn-success') %>
+    </div>
+  <% end %>
+</div>

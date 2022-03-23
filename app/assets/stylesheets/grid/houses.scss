@@ -1,0 +1,55 @@
+.grid {
+  display: grid;
+}
+
+.house-row-grid {
+  @extend .grid;
+
+  grid-template-columns: 3fr 5fr;
+
+  .house-info {
+    @extend .grid;
+
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, auto) 1fr auto;
+
+    .house-name {
+      grid-column: 1/5;
+      grid-row: 2/3;
+    }
+
+    .house-location {
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+
+    .house-description {
+      grid-column: 1/9;
+      grid-row: 3/4;
+    }
+
+    .house-price {
+      justify-self: end;
+      grid-column: 7/9;
+      grid-row: 4/5;
+    }
+  }
+}
+
+.house-detailed-container {
+  @extend .grid;
+
+  grid-template-columns: 4fr 2fr;
+}
+
+.house-booking-form-grid {
+  @extend .grid;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.house-existing_booking-grid {
+  @extend .grid;
+
+  grid-template-columns: repeat(2, 3fr) 1fr;
+}

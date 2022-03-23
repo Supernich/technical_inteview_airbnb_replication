@@ -1,0 +1,20 @@
+<div class="container">
+  <%= render('partials/search_bar') %>
+</div>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <% if @houses.present? %>
+    <div class="h3">Available houses</div>
+  <% else %>
+    <div class="h2">Sorry there is no houses</div>
+  <% end %>
+
+  <%= render(partial: 'house_row', collection: @houses, as: :house) %>
+
+  <br>
+
+  <%= link_to 'New House', new_house_path %>
+
+</div>

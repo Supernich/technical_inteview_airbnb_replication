@@ -1,0 +1,79 @@
+<div class="container">
+  <%= link_to 'Edit', edit_house_path(@house) %> |
+  <%= link_to 'Back', houses_path %>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="house-detailed-container item-border">
+    <div class="house-general-info">
+      <div class="cell">
+        <%= @house.country %>, <%= @house.city %>
+      </div>
+
+      <div class="cell h2">
+        <%= @house.name %>
+      </div>
+
+      <div class="cell wrap-anywhere">
+        <%= @house.description || 'House without description' %>
+      </div>
+    </div>
+    <div class="house-book-window item-border">
+      <div class="cell">
+        <strong>Price:</strong>
+        <%= @house.price %> $ / per night
+      </div>
+
+      <div>
+        <div class="booking-form">
+          <%= form_with(model: HouseBooking.new) do |form| %>
+            <%= form.hidden_field(:house_id, value: @house.id) %>
+            <div class="house-booking-form-grid">
+              <div class="cell">
+                <%= form.label(:check_in, class: 'form-label') %>
+                <%= form.date_field(:check_in, class: 'form-control', min: @check_in_range[:min], max: @check_in_range[:max])  %>
+              </div>
+
+              <div class="cell">
+                <%= form.label(:check_out, class: 'form-label') %>
+                <%= form.date_field(:check_out, class: 'form-control', min: @check_out_range[:min], max: @check_out_range[:max]) %>
+              </div>
+
+              <div class="cell">
+                <%= form.submit('Book house', class: 'btn btn-success') %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="house-existing_booking-grid">
+          <% if @bookings.present? %>
+            <div>
+              Already booked from:
+            </div>
+
+            <div>
+              To:
+            </div>
+
+            <div></div>
+
+            <% @bookings.each do |booking| %>
+              <div>
+                <%= booking.check_in %>
+              </div>
+
+              <div>
+                <%= booking.check_out %>
+              </div>
+
+              <div>
+                <%= link_to('X', house_booking_url(booking), method: :delete) %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
