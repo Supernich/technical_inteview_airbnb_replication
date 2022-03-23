@@ -47,22 +47,24 @@
         </div>
 
         <div class="house-existing_booking-grid">
-          <div>
-            Was booked from:
-          </div>
-
-          <div>
-            To:
-          </div>
-
-          <% @house.house_bookings.where(check_out: Date.current..).each do |booking| %>
+          <% if @bookings.present? %>
             <div>
-              <%= booking.check_in %>
+              Already booked from:
             </div>
 
             <div>
-              <%= booking.check_out %>
+              To:
             </div>
+
+            <% @bookings.each do |booking| %>
+              <div>
+                <%= booking.check_in %>
+              </div>
+
+              <div>
+                <%= booking.check_out %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>

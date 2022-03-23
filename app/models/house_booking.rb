@@ -5,6 +5,9 @@ class HouseBooking < ApplicationRecord
 
   validate :validate_dates
 
+  scope :from_check_in_date, ->(date) { where(check_in: date..) }
+  scope :from_check_out_date, ->(date) { where(check_out: date..) }
+
   private
 
   def validate_dates
