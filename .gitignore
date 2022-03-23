@@ -17,6 +17,7 @@
 
 /public/assets
 .byebug_history
+/coverage
 
 /config/master.key
 
