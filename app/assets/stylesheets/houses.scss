@@ -13,3 +13,8 @@
 .house-info {
   @extend .item-border;
 }
+
+.error-explanation {
+  @extend .item-border;
+  color: #ff5e5e;
+}
