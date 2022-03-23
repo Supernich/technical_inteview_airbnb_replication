@@ -3,6 +3,21 @@
 RSpec.describe HousesController, type: :controller do
   include ActiveSupport::Testing::TimeHelpers
 
+  describe '#index' do
+    before do
+      travel_to(Date.new(2022, 3, 23))
+
+      create(:house, name: 'house1', country: 'Country1', city: 'City1')
+      create(:house, name: 'house2', country: 'Country2', city: 'City2')
+    end
+
+    it 'assigns filtered houses by provided country' do
+      get(:index, params: { country: 'country1' })
+
+      expect(assigns(:houses).as_json(only: :name)).to(eq([{ 'name' => 'house1' }]))
+    end
+  end
+
   describe '#show' do
     let(:house) { create(:house) }
 
