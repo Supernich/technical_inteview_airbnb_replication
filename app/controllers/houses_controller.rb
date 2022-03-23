@@ -2,9 +2,10 @@
 
 class HousesController < ApplicationController
   before_action :set_house, only: %i[show edit update destroy]
+  before_action :assign_filters, only: :index
 
   def index
-    @houses = House.all
+    @houses = HousesSearchService.filter_houses(@filters)
   end
 
   def show
@@ -52,5 +53,19 @@ class HousesController < ApplicationController
 
   def house_params
     params.require(:house).permit(:country, :city, :name, :description, :address, :price)
+  end
+
+  def assign_filters
+    @country = params[:country]
+    @city = params[:city]
+    @check_in = params[:check_in]
+    @check_out = params[:check_out]
+
+    @filters = {
+      country: @country,
+      city: @city,
+      check_in: @check_in,
+      check_out: @check_out
+    }
   end
 end
