@@ -19,7 +19,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module airbnb_replication_for_inteview
+module AIRBNB_REPLICATION_FOR_INTERVIEW
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
