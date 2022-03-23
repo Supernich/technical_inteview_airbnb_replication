@@ -42,8 +42,14 @@
   grid-template-columns: 4fr 2fr;
 }
 
-.house-booking-form-grid, .house-existing_booking-grid {
+.house-booking-form-grid {
   @extend .grid;
 
   grid-template-columns: repeat(2, 1fr);
+}
+
+.house-existing_booking-grid {
+  @extend .grid;
+
+  grid-template-columns: repeat(2, 3fr) 1fr;
 }

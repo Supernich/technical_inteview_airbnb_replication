@@ -13,7 +13,10 @@ class HouseBookingsController < ApplicationController
   def destroy
     @booking = HouseBooking.find(params[:id])
 
-    redirect_to house_url(@booking.house)
+    house = @booking.house
+
+    @booking.destroy
+    redirect_to house_url(house)
   end
 
   private

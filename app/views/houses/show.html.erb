@@ -56,6 +56,8 @@
               To:
             </div>
 
+            <div></div>
+
             <% @bookings.each do |booking| %>
               <div>
                 <%= booking.check_in %>
@@ -63,6 +65,10 @@
 
               <div>
                 <%= booking.check_out %>
+              </div>
+
+              <div>
+                <%= link_to('X', house_booking_url(booking), method: :delete) %>
               </div>
             <% end %>
           <% end %>
