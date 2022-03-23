@@ -1,0 +1,21 @@
+<div class="house-row-grid house-row">
+  <div></div>
+
+  <div class="house-info">
+    <div class="cell house-name">
+      <%= link_to(house.name, house) %>
+    </div>
+
+    <div class="cell house-location">
+      <%= house.country %>, <%= house.city %>
+    </div>
+
+    <div class="cell house-description">
+      <%= house.description.truncate(140) %>
+    </div>
+
+    <div class="cell house-price">
+      <%= house.price %> $
+    </div>
+  </div>
+</div>

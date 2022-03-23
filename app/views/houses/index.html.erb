@@ -1,37 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
+  <% if @houses.present? %>
+    <div class="h3">Available houses</div>
+  <% else %>
+    <div class="h2">Sorry there is no houses</div>
+  <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th>City</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%= render(partial: 'house_row', collection: @houses, as: :house) %>
 
-  <tbody>
-    <% @houses.each do |house| %>
-      <tr>
-        <td><%= house.country %></td>
-        <td><%= house.city %></td>
-        <td><%= house.name %></td>
-        <td><%= house.description %></td>
-        <td><%= house.address %></td>
-        <td><%= house.price %></td>
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
+  <%= link_to 'New House', new_house_path %>
 
-<%= link_to 'New House', new_house_path %>
+</div>

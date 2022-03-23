@@ -1,3 +1,12 @@
-// Place all the styles related to the Houses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.house-row {
+  @extend .item-border
+}
+
+.cell {
+  padding: 8px;
+  word-wrap: anywhere;
+}
+
+.house-info {
+  @extend .item-border;
+}
