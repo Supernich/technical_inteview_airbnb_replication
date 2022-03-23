@@ -1,10 +1,11 @@
 #Technical test Ruby on Rails
+
 Main task: Develop a clone of airbnb
 
 Main feature of airbnb is placement of an advertisement for the rental of apartments.
 First goal is to implement this feature.
 
-Technologies used:
+#Technologies used:
 - Rails 6
 - Ruby 2.7
 - Rspec (for test)
