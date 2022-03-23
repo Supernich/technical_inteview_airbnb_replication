@@ -1,24 +1,31 @@
-# README
+#Technical test Ruby on Rails
+Main task: Develop a clone of airbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Main feature of airbnb is placement of an advertisement for the rental of apartments.
+First goal is to implement this feature.
 
-Things you may want to cover:
+Technologies used:
+- Rails 6
+- Ruby 2.7
+- Rspec (for test)
+- Rubocop (maintain code quality)
+- MySql
+- Docker-compose (only for hosting database)
+- Bootstrap to improve views
 
-* Ruby version
+#Done features:
+- Apartment advert management features(create, edit, delete)
+- Apartment booking feature
+- Improved basic rails scaffold views appearance
+- Houses filtering service by country, city, checkin or checkout dates
+- Features covered with tests by 88% (branch coverage 86%)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Todo:
+- Improve houses filtering service
+- Improve booking mechanism
+- Add authentication
+- Add apartment management authorization
+- Add hosts contact data (it is better to create users model and ask them to fill contacts)
+- Add house photos upload feature
+- Add landing page with community posts
+- Cover all new features with tests
