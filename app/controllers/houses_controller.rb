@@ -7,7 +7,10 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
-  def show; end
+  def show
+    @check_in_range = { min: (@house.last_check_out_date || Date.current), max: (Date.current + 1.year) }
+    @check_out_range = { min: ((@house.last_check_out_date || Date.current) + 1), max: (Date.current + 1.year) }
+  end
 
   def new
     @house = House.new

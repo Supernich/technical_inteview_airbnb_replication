@@ -1,5 +1,7 @@
 .house-row {
-  @extend .item-border
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
 }
 
 .cell {
@@ -11,10 +13,15 @@
 }
 
 .house-info {
-  @extend .item-border;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
 }
 
 .error-explanation {
-  @extend .item-border;
+  border: 1px solid #ff5e5e;
+  border-radius: 8px;
+  padding: 12px;
+
   color: #ff5e5e;
 }

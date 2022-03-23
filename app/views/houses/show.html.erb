@@ -23,6 +23,49 @@
         <strong>Price:</strong>
         <%= @house.price %> $ / per night
       </div>
+
+      <div>
+        <div class="booking-form">
+          <%= form_with(model: HouseBooking.new) do |form| %>
+            <%= form.hidden_field(:house_id, value: @house.id) %>
+            <div class="house-booking-form-grid">
+              <div class="cell">
+                <%= form.label(:check_in, class: 'form-label') %>
+                <%= form.date_field(:check_in, class: 'form-control', min: @check_in_range[:min], max: @check_in_range[:max])  %>
+              </div>
+
+              <div class="cell">
+                <%= form.label(:check_out, class: 'form-label') %>
+                <%= form.date_field(:check_out, class: 'form-control', min: @check_out_range[:min], max: @check_out_range[:max]) %>
+              </div>
+
+              <div class="cell">
+                <%= form.submit('Book house', class: 'btn btn-success') %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="house-existing_booking-grid">
+          <div>
+            Was booked from:
+          </div>
+
+          <div>
+            To:
+          </div>
+
+          <% @house.house_bookings.where(check_out: Date.current..).each do |booking| %>
+            <div>
+              <%= booking.check_in %>
+            </div>
+
+            <div>
+              <%= booking.check_out %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
