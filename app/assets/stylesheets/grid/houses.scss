@@ -35,3 +35,9 @@
     }
   }
 }
+
+.house-detailed-container {
+  @extend .grid;
+
+  grid-template-columns: 4fr 2fr;
+}
