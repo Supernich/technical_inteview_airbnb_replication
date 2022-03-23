@@ -19,6 +19,9 @@ Layout/BeginEndAlignment:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+Metrics/LineLength:
+  Max: 150
+
 Metrics/ClassLength:
   CountAsOne: ['array', 'hash', 'heredoc']
   CountComments: true
