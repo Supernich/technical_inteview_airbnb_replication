@@ -1,0 +1,43 @@
+<div>
+  <%= form_with(url: houses_url, method: :get, class: 'form-control') do |f| %>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="col">Where are you going?</div>
+
+        <div class="row">
+          <div class="col form-group">
+            Country: <%= f.text_field(:country, value: @country, placeholder: 'Germany', class: 'form-control-sm') %>
+          </div>
+
+          <div class="col form-group">
+            City: <%= f.text_field(:city, value: @city, placeholder: 'Berlin', class: 'form-control-sm') %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="column">
+          <div class="col">Check in</div>
+
+          <div class="col">
+            <%= f.date_field(:check_in, value: @check_in, class: 'form-control-sm', min: Date.current) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="column">
+          <div class="col">Check out</div>
+
+          <div class="col">
+            <%= f.date_field(:check_out, value: @check_out, class: 'form-control-sm', min: Date.current) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col align-self-end">
+        <%= f.submit('Search') %>
+      </div>
+    </div>
+  <% end %>
+</div>
