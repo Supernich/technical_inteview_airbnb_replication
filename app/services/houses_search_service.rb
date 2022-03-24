@@ -10,6 +10,8 @@ class HousesSearchService
       houses
     end
 
+    private
+
     def filter_by_country(country, houses)
       houses.where("country like '%#{country}%'")
     end
