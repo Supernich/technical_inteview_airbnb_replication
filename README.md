@@ -19,7 +19,7 @@ First goal is to implement this feature.
 - Apartment booking feature
 - Improved basic rails scaffold views appearance
 - Houses filtering service by country, city, checkin or checkout dates
-- Features covered with tests by 88% (branch coverage 86%)
+- Features covered with tests by 86% (branch coverage 86%)
 
 #Todo:
 - Improve houses filtering service

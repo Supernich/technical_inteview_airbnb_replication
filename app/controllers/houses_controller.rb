@@ -9,9 +9,6 @@ class HousesController < ApplicationController
   end
 
   def show
-    @check_in_range = { min: ((@house.last_check_out_date || Date.current) + 1), max: (Date.current + 1.year) }
-    @check_out_range = { min: ((@house.last_check_out_date || Date.current) + 2), max: (Date.current + 1.year) }
-
     @bookings = @house.house_bookings.from_check_out_date(Date.current)
   end
 
@@ -61,11 +58,6 @@ class HousesController < ApplicationController
     @check_in = params[:check_in]
     @check_out = params[:check_out]
 
-    @filters = {
-      country: @country,
-      city: @city,
-      check_in: @check_in,
-      check_out: @check_out
-    }
+    @filters = { country: @country, city: @city, check_in: @check_in, check_out: @check_out }
   end
 end

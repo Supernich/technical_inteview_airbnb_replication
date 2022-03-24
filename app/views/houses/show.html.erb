@@ -31,12 +31,12 @@
             <div class="house-booking-form-grid">
               <div class="cell">
                 <%= form.label(:check_in, class: 'form-label') %>
-                <%= form.date_field(:check_in, class: 'form-control', min: @check_in_range[:min], max: @check_in_range[:max])  %>
+                <%= form.date_field(:check_in, class: 'form-control', min: check_in_range(@house)[:min], max: check_in_range(@house)[:max])  %>
               </div>
 
               <div class="cell">
                 <%= form.label(:check_out, class: 'form-label') %>
-                <%= form.date_field(:check_out, class: 'form-control', min: @check_out_range[:min], max: @check_out_range[:max]) %>
+                <%= form.date_field(:check_out, class: 'form-control', min: check_out_range(@house)[:min], max: check_out_range(@house)[:max]) %>
               </div>
 
               <div class="cell">
